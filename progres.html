@@ -5,12 +5,12 @@
   <title>JS Bin</title>
   <style>
   ul {
-  margin:0;
-  padding:0;
-}
-li {
-  list-style: none;
-}
+    margin:0;
+    padding:0;
+  }
+  li {
+    list-style: none;
+  }
 
 .pub-wrap {
   position: relative;
@@ -33,14 +33,17 @@ li {
   height: 35px;
   margin-top: 28px;
   margin-left: 35px;
+  /*字体为0 解决 第五个掉下去*/
   font-size: 0;
   color: #fff;
 }
-
+/*使用伪元素制作中间线*/
 .pub-process:after {
   position: absolute;
+  /*top 跟 transfrom 进行结合 使其居中*/
   top: 50%;
   left: 0;
+  /*提高层级*/
   z-index: 1;
   width: 99%;
   height: 4px;
@@ -49,7 +52,7 @@ li {
   transform: translate(0, -50%);
   background-color: #d9d9d9;
 }
-
+/*li 包括线跟小圆点*/
 .pub-process li {
   position: relative;
   z-index: 5;
@@ -58,12 +61,12 @@ li {
   height: 35px;
   font-size: .875rem;
 }
-
+/*第一个只是圆点*/
 .pub-process li:first-child {
   width: 35px;
   margin-left: -35px;
 }
-
+/*span 制作 小圆点*/
 .pub-process .ball {
   position: absolute;
   top: 0;
@@ -82,7 +85,7 @@ li {
   background-color: #11c2c2;
 }
 
-.pub-process .active + .active:after {
+/*.pub-process .active + .active:after {
   position: absolute;
   top: 50%;
   left: 0;
@@ -93,7 +96,7 @@ li {
   -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
   background-color: #11c2c2;
-}
+}*/
 
 .process-3 li {
   width: 50%;
@@ -104,8 +107,10 @@ li {
 }
 
 
-/* flex ver */
-/*.pub-process-flex {
+/* flex ver
+  更加灵活
+ */
+.pub-process-flex {
   display: -webkit-box;
 }
 .pub-process-flex li {
@@ -117,23 +122,24 @@ li {
   width: 35px;
   margin-left: -35px;
   -webkit-box-flex: 0;
-}*/
+}
   </style>
 </head>
 <body>
-  <div class="pub-wrap">
-    <div class="pub-title" id="pubTitle">作业进度条</div>
+
+  <!--<div class="pub-wrap">
+    <div class="pub-title" id="pubTitle">进度条</div>
     <ul class="pub-process process-5" id="pubProcess">
       <li class="active"><span class="ball">1天</span></li>
-      <li class="active"><span class="ball">1天</span></li>
-      <li><span class="ball">1天</span></li>
-      <li><span class="ball">1天</span></li>
-      <li><span class="ball">1天</span></li>
+      <li class="active"><span class="ball">2天</span></li>
+      <li><span class="ball">3天</span></li>
+      <li><span class="ball">4天</span></li>
+      <li><span class="ball">5天</span></li>
     </ul>
-  </div>
+  </div>-->
 
   <!-- flex版本 -->
-  <!--<div class="pub-wrap">
+  <div class="pub-wrap">
     <div class="pub-title" id="pubTitle">在群内累计布置3天作业，即可加入先锋教师！</div>
     <ul class="pub-process process-5 pub-process-flex" id="pubProcess">
       <li class="active"><span class="ball">1天</span></li>
@@ -141,7 +147,8 @@ li {
       <li><span class="ball">1天</span></li>
       <li><span class="ball">1天</span></li>
       <li><span class="ball">1天</span></li>
+      <li><span class="ball">1天</span></li>
     </ul>
-  </div>-->
+  </div>
 </body>
 </html>
